@@ -12,7 +12,7 @@ function initMap() {
         position: {lat: 30.266666, lng: -97.733330},
         map: map,
         icon: {
-            url: '../img/marker.png',
+            url: './img/marker.png',
             size: new google.maps.Size(44, 57),
         },
         title: 'Test',
