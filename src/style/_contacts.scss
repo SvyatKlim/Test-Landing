@@ -223,10 +223,11 @@
   }
   .contact__info {
     width: 40%;
-  }
-  .contact__info .section__number {
-    margin-bottom: 100px;
-    @include toEm(200, $base-size);
+
+    .section__number {
+      margin-bottom: 100px;
+      @include toEm(200, $base-size);
+    }
   }
   .horizontal__nav {
     width: 25%;
@@ -239,11 +240,17 @@
     }
   }
 }
-
+@media screen and (min-width: 1950px) {
+  #map {
+    left: 2%;
+    top: 2%;
+  }
+}
 @media screen and (max-width: 1680px) {
   #map, .contact__map__container {
     width: 31vw;
     height: calc(31vw * .77);
+
     &:after {
       right: 13%;
     }
@@ -282,64 +289,71 @@
     margin-bottom: 50px;
     @include toEm(140, $base-size);
   }
-  .intro__title__content {
-    width: 72.7%;
-    margin-left: 15%;
-  }
   .intro__title {
     height: 400px;
+
+    &__content {
+      width: 72.7%;
+      margin-left: 15%;
+    }
   }
 }
 
 @media screen and (max-width: 1024px) {
   .contact {
-    padding: 60px 0 0
+    padding: 60px 0 0;
+
+    &__container {
+      padding: 0 40px 0 90px;
+    }
   }
-  .contact__container {
-    padding: 0 40px 0 90px;
-  }
+
   .horizontal__nav {
     left: 40px;
   }
+
   .contact__info .section__number {
     margin-bottom: 50px;
     @include toEm(100, $base-size);
   }
+
   .footer__nav__aim__single {
     right: 30px;
   }
+
 }
 
 @media screen and (max-width: 768px) {
-  .contact__container {
-    padding: 0 40px 0 70px;
-    flex-wrap: wrap;
-  }
-  .contact__map {
+  .contact {
+    padding: 0;
+    &__container {
+      padding: 0 40px 0 70px;
+      flex-wrap: wrap;
+    }
+
+    &__map {
+      &__mask {
+        top: 80px;
+        left: 52px;
+      }
+    }
+    &__info .section__number {
+      @include toEm(70, $base-size);
+      margin-bottom: -85px;
+    }
+    &__container .contact__form {
+      width: 75%;
+      form textarea {
+        margin-bottom: 25px;
+      }
+    }
   }
   #map, .contact__map__container {
     width: 42vw;
     height: calc(42vw * .77);
   }
-  .contact__map__mask {
-    top: 80px;
-    left: 52px;
-  }
-  .contact {
-    padding: 0;
-  }
-  .contact__info .section__number {
-    @include toEm(70, $base-size);
-    margin-bottom: -85px;
-  }
   .horizontal__nav {
     left: 30px;
-  }
-  .contact__container .contact__form {
-    width: 75%;
-  }
-  .contact__form form textarea {
-    margin-bottom: 25px;
   }
   .footer {
     padding: 20px;
@@ -348,9 +362,16 @@
 
 @media screen and (max-width: 576px) {
   .contact {
+    padding-top: 100px;
+    padding-bottom: 0;
     &__info {
       width: 100%;
       order: 1;
+      .section__number {
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+      }
     }
 
     &__form {
@@ -359,42 +380,31 @@
 
     &__map {
       order: 3;
+      width: 100%;
+
+      &__container {
+        width: 100vw;
+        height: 400px;
+        max-width: unset;
+        margin-left: -30px;
+
+        &:after {
+          content: none;
+        }
+      }
+
+      &__mask {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
     }
-  }
-  .contact__info .section__number {
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-  }
-  .contact__container {
-    padding: 0 30px;
-  }
-  .contact {
-    padding-top: 100px;
-    padding-bottom: 0;
+    &__container {
+      padding: 0 30px;
+    }
   }
   .section__number, .footer, .contact__form {
     display: none;
-  }
-  .contact__map {
-    width: 100%;
-
-    &__container {
-      width: 100vw;
-      height: 400px;
-      max-width: unset;
-      margin-left: -30px;
-
-      &:after {
-        content: none;
-      }
-    }
-
-    &__mask {
-      position: relative;
-      top: 0;
-      left: 0;
-    }
   }
   #map {
     position: absolute;

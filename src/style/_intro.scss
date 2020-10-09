@@ -88,32 +88,29 @@
       min-height: 350px;
     }
 
-    .intro__link {
+    &__link {
       display: none;
+      &__mobile {
+        display: inline-flex;
+      }
     }
+    &__title__content {
+      position: absolute;
+      bottom: 15px;
+      h2 {
+        margin-bottom: 10px;
+      }
 
-    .intro__link__mobile {
-      display: inline-flex;
-    }
-  }
-  .intro__title__content {
-    position: absolute;
-    bottom: 15px;
-  }
-  .intro__title__content {
-    h2 {
-      margin-bottom: 10px;
-    }
-
-    p {
-      margin-bottom: 16px;
+      p {
+        margin-bottom: 16px;
+      }
     }
   }
 
 }
 
 @media screen and (max-width: 576px) {
-  .intro__title .intro__title__content {
+  .intro__title__content {
     padding: 0 30px;
     width: 100%;
     margin: 0;
