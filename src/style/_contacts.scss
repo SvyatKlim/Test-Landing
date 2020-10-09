@@ -205,6 +205,8 @@
 }
 
 #map {
+  position: relative;
+  z-index: 2;
   width: 33vw;
   height: calc(33vw * .77);
   max-width: 620px;

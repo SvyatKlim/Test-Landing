@@ -1,11 +1,11 @@
 const gulp = require('gulp');
-const serve = require('./Test-Landing/gulp/tasks/serve');
-const style = require('./Test-Landing/gulp/tasks/style');
-const script = require('./Test-Landing/gulp/tasks/script');
-const clean = require('./Test-Landing/gulp/tasks/clean');
-const images = require('./Test-Landing/gulp/tasks/images');
-const html = require('./Test-Landing/gulp/tasks/html');
-const fonts = require('./Test-Landing/gulp/tasks/fonts');
+const serve = require('./gulp/tasks/serve');
+const style = require('./gulp/tasks/style');
+const script = require('./gulp/tasks/script');
+const clean = require('./gulp/tasks/clean');
+const images = require('./gulp/tasks/images');
+const html = require('./gulp/tasks/html');
+const fonts = require('./gulp/tasks/fonts');
 
 function setMode(isProduction = false) {
     return cb => {

@@ -423,6 +423,7 @@ p {
       }
 
       &__item {
+        align-items: flex-start;
         width: 50%;
         padding: 16px 0 16px 15px;
         margin-bottom: 10px;
