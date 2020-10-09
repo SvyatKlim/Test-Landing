@@ -1,0 +1,544 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  color: $mainDark;
+  font-size: 15px;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  @include toEm(42, $base-size);
+  line-height: 1.2;
+  text-transform: uppercase;
+
+}
+
+h3 {
+  @include toEm(22, $base-size);
+  line-height: 1.2;
+
+}
+
+h4 {
+  @include toEm(16, $base-size);
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+}
+
+a {
+  @include toEm(13, $base-size);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $mainDark;
+}
+
+p {
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.btn {
+  width: 150px;
+  height: 50px;
+  font-weight: 300;
+  border: 1px solid $mainLight;
+  @include toEm(16, $base-size);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  transition: all 0.4s;
+  background-color: transparent;
+  color: $mainLight;
+  border-radius: 4px;
+  @include hover-supported() {
+    color: #fff;
+    border-color: white;
+  }
+
+  &:active {
+    color: $active;
+    border-color: $active;
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::before, &::after {
+    position: absolute;
+    background: $mainDark;
+    z-index: -1;
+    transition: 1s;
+    content: '';
+  }
+
+  &::before {
+    height: 50px;
+    width: 117px;
+  }
+
+  &::after {
+    width: 150px;
+    height: 22px;
+  }
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  max-width: 100vw;
+  z-index: 5;
+
+  &__container {
+    padding: 30px 60px 0 180px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    margin-left: auto;
+  }
+}
+
+.container {
+  &__right {
+    width: 62.5%;
+  }
+
+  &__left {
+    width: 37.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+}
+
+.hunting {
+  display: flex;
+
+  &__info {
+    background-color: $mainLight;
+    padding-bottom: 120px;
+
+
+    &__divider {
+      &__top, &__bot {
+        width: 100%;
+        position: relative;
+        left: 0;
+
+        svg {
+          width: 100%;
+          max-width: 590px;
+          height: 52px;
+        }
+      }
+    }
+
+    &__item {
+      height: 265px;
+      padding-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      width: 100%;
+      max-width: 370px;
+      margin-left: 20%;
+
+      &.second__item {
+        position: relative;
+        height: 244px;
+        padding: 30px 0 0;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__item__title {
+    a {
+      cursor: pointer;
+      @include toEm(16, $base-size);
+      font-weight: 700;
+      line-height: 1.2;
+      text-transform: uppercase;
+      margin: 15px 0;
+      transition: opacity 0.4s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &:active {
+        opacity: 1;
+        color: #000;
+
+        svg {
+          opacity: 1;
+          fill: #000
+        }
+      }
+
+      svg {
+        fill: $mainDark;
+        transition: 0.4s;
+
+      }
+    }
+  }
+
+  &__cat {
+    background-color: $mainDark;
+    padding: 52px 0;
+
+    &__centred {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__container {
+      max-width: 1040px;
+      width: 100%;
+      padding: 0 80px 35px;
+      margin: 0 85px;
+      border-bottom: 1px solid rgba(250, 236, 205, 0.6);
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 33.3%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 55px;
+      padding: 24px;
+
+      &__img {
+        height: 50px;
+      }
+
+      &:nth-last-child(-n+2) {
+        margin-bottom: 0;
+      }
+
+      &__title {
+        margin-top: 10px;
+
+        a {
+          color: $mainLight;
+          text-align: center;
+          display: flex;
+          align-items: flex-end;
+          @include toEm(16, $base-size);
+          font-weight: 700;
+          transition: 0.4s;
+
+          &:hover {
+            color: #fff;
+
+            svg {
+              fill: #fff;
+            }
+          }
+
+          &:active {
+            color: $active;
+
+            svg {
+              fill: $active;
+            }
+          }
+
+          svg {
+            fill: $mainLight;
+          }
+
+          span {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .divider {
+    width: 100%;
+    max-width: 590px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.contact__container {
+  max-width: 1500px;
+  width: 100%;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1919px) {
+  .hunting .divider, .hunting__info__divider__top, .hunting__info__divider__bot {
+    width: 90%;
+  }
+  .hunting__info__item {
+    max-width: 345px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  h2 {
+    @include toEm(34, $base-size);
+  }
+
+  h3 {
+    @include toEm(20, $base-size);
+  }
+  .hunting__item__title, .hunting__cat__item__title {
+    a {
+      cursor: pointer;
+      @include toEm(14, $base-size);
+    }
+  }
+
+  .hunting {
+    &__info {
+      padding-bottom: 50px;
+
+      &__item {
+        margin-left: 15%;
+        @include toEm(14, $base-size);
+
+        p {
+          max-width: 320px;
+        }
+
+        height: 220px;
+      }
+    }
+
+    &__cat {
+      padding: 42px 0;
+
+      &__item {
+        margin-bottom: 22px;
+      }
+
+      &__container {
+        padding: 0 40px 16px;
+        margin: 0 40px;
+      }
+    }
+  }
+  .divider, .hunting__info__divider__bot, .hunting__info__divider__top {
+    margin-top: -7px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .hunting__cat {
+    padding: 22px 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h2 {
+    @include toEm(28, $base-size);
+  }
+  .contact__info__details h2 {
+    margin: 15px 0;
+  }
+  .contact__info .contact__info__details ul li:nth-child(even) {
+    margin-bottom: 15px;
+  }
+  h3 {
+    line-height: 1;
+    margin: 10px 0;
+  }
+  .contact__container {
+    .contact__form {
+      width: 35%;
+    }
+
+    .contact__form form input {
+      margin-bottom: 15px;
+    }
+  }
+  .btn {
+    height: 40px;
+  }
+  .hunting__cat__item {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__container {
+    padding: 15px 30px 0 30px
+  }
+  .hunting {
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: $mainDark;
+
+    &__info, &__cat {
+      width: 100%;
+      margin: 0 auto;
+      padding: 50px 50px 0;
+    }
+
+    &__cat {
+      padding-top: 0;
+
+      &__container {
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+      }
+
+      &__item {
+        width: 50%;
+        padding: 16px 0 16px 15px;
+        margin-bottom: 10px;
+        max-width: 250px;
+
+        &:nth-child(odd) {
+          padding-left: 0;
+          padding-right: 15px;
+        }
+      }
+    }
+
+    &__info {
+      background-color: $mainDark;
+      color: $mainLight;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+
+      &__item {
+        margin-left: 0;
+        width: 50%;
+        max-width: 270px;
+        height: auto;
+        padding-right: 15px;
+
+        &__img {
+          width: 100%;
+        }
+
+        &.second__item {
+          padding: 0 0 30px 15px;
+          height: auto;
+        }
+      }
+    }
+
+    &__item {
+      &__title {
+        margin: 5px 0;
+
+        & > a {
+          color: $mainLight;
+
+          svg {
+            fill: $mainLight
+          }
+        }
+      }
+
+      &__description {
+        color: $mainLight;
+      }
+    }
+  }
+  .divider, .hunting__info__divider__bot, .hunting__info__divider__top {
+    display: none;
+  }
+  .hunting__cat__item__title a, .hunting__item__title a {
+    br {
+      display: none
+    }
+  }
+
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .hunting {
+    &__cat {
+      padding: 0 37px;
+
+      &__container {
+        border: none;
+      }
+
+      &__item {
+        width: 100%;
+        max-width: unset;
+        align-items: flex-start;
+        padding: 0;
+
+        &:nth-child(n) {
+          padding: 0;
+        }
+      }
+    }
+
+    &__info {
+      flex-wrap: wrap;
+      padding: 50px 37px 0;
+
+      &__item {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        max-width: unset;
+        margin-bottom: 40px;
+
+        &.second__item {
+          padding: 0;
+        }
+
+        p {
+          max-width: unset;
+        }
+      }
+    }
+  }
+}

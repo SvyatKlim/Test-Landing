@@ -1,0 +1,145 @@
+.intro {
+  display: flex;
+
+  &__title {
+    background-color: $mainLight;
+    height: 578px;
+
+    &__content {
+      width: 56.7%;
+      margin-left: 20%;
+
+      p {
+        margin-bottom: 48px;
+        max-width: 370px;
+      }
+
+      .intro__link {
+        letter-spacing: 0.3em;
+        font-weight: 800;
+        display: flex;
+        opacity: 1;
+        transition: opacity 0.4s;
+
+        &__mobile {
+          display: none;
+        }
+
+        &:hover {
+          opacity: 0.6;
+        }
+
+        span {
+          margin-left: 15px;
+        }
+
+        &:active {
+          opacity: 1;
+          color: #000;
+
+          svg {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__img {
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .intro__title {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro {
+    flex-wrap: wrap;
+    position: relative;
+
+    .container__left, .container__right {
+      width: 100%;
+    }
+
+    &__title {
+      height: auto;
+      position: absolute;
+      background-color: transparent;
+      order: 2;
+      bottom: 0;
+      color: $mainLight;
+
+      a {
+        color: $mainLight;
+      }
+    }
+
+    &__img {
+      order: 1;
+      width: 100%;
+      height: 45vh;
+      min-height: 350px;
+    }
+
+    .intro__link {
+      display: none;
+    }
+
+    .intro__link__mobile {
+      display: inline-flex;
+    }
+  }
+  .intro__title__content {
+    position: absolute;
+    bottom: 15px;
+  }
+  .intro__title__content {
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .intro__title .intro__title__content {
+    padding: 0 30px;
+    width: 100%;
+    margin: 0;
+
+    h2 {
+      line-height: 36px;
+    }
+
+    p {
+      max-width: unset;
+      line-height: 22.5px;
+    }
+
+    a {
+      z-index: 10;
+      position: relative;
+    }
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 83px;
+      position: absolute;
+      background: linear-gradient(0, #303030 40%, rgba(48, 48, 48, 0) 100%);
+      left: 0;
+      bottom: -50px;
+    }
+  }
+}

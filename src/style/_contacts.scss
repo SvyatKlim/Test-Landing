@@ -1,0 +1,410 @@
+.contact {
+  background-color: $mainDark;
+  width: 100%;
+  height: 100%;
+  padding: 90px 0 0;
+  color: $mainLight;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    margin: 0 146px 0 261px
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26%;
+
+    .section__number {
+      @include toEm(250, $base-size);
+      font-family: 'Rubik', sans-serif;
+      line-height: 276.5px;
+      margin-bottom: 130px;
+    }
+
+    &__details {
+      ul {
+        padding: 0;
+
+        li {
+          list-style: none;
+          font-weight: 200;
+
+          &:nth-child(even) {
+            margin-bottom: 29px;
+          }
+        }
+      }
+
+      h2 {
+        font-weight: 300;
+      }
+    }
+  }
+
+  &__map {
+    width: 48%;
+    position: relative;
+
+    &__mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    &__container {
+      width: 33vw;
+      height: calc(33vw * .77);
+      position: relative;
+      max-width: 620px;
+      margin: 0 auto;
+
+      &:after {
+        content: '';
+        background-image: url("../img/map.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        max-width: 620px;
+        max-height: 620px;
+        top: -70px;
+        width: 100%;
+        left: auto;
+        bottom: -40px;
+        right: 11%;
+      }
+
+    }
+
+  }
+
+  &__form {
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+
+    &__title {
+      h3 {
+        font-weight: 300;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 17px;
+
+      input, textarea {
+        @include toEm(14, $base-size);
+        font-weight: 200;
+        background: $mainDark;
+        position: relative;
+        border: none;
+        height: 25px;
+        border-bottom: 1px solid $mainLight;
+        color: $mainLight;
+        width: 100%;
+        margin-bottom: 30px;
+
+        &::placeholder {
+          color: $mainLight;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      textarea {
+        resize: none;
+        height: 100px;
+        margin-bottom: 56px;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 20px 80px 40px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $mainDark;
+
+  &__copyright {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    p, a {
+      color: $mainLight;
+      font-weight: 200;
+      text-align: center;
+      text-transform: none;
+    }
+
+    a {
+      @include toEm(15, $base-size);
+      transition: 0.4s;
+
+      &:hover {
+        color: #fff;
+      }
+
+      &:active {
+        color: $active
+      }
+    }
+  }
+
+  &__nav__aim__single {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+    position: absolute;
+    right: 80px;
+  }
+}
+
+.horizontal__nav {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform-origin: left;
+  transform: rotate(-90deg);
+  position: absolute;
+  max-width: 385px;
+
+  &__line {
+    border: 1px solid $mainLight;
+    width: 242px;
+    margin: 0 11px 0 19px;
+  }
+
+  &__text {
+    color: $mainLight;
+    font-weight: 200;
+  }
+}
+
+.clip-svg {
+  width: 0;
+  height: 0;
+}
+
+.clip-polygon {
+  clip-path: url("#clip-svg-demo");
+}
+
+#map {
+  width: 33vw;
+  height: calc(33vw * .77);
+  max-width: 620px;
+  max-height: 492px;
+  left: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 1919px) {
+  .contact__container {
+    max-width: 1400px;
+    padding: 0 50px;
+    margin: 0 147px 0 261px;
+  }
+  .contact__info {
+    width: 40%;
+  }
+  .contact__info .section__number {
+    margin-bottom: 100px;
+    @include toEm(200, $base-size);
+  }
+  .horizontal__nav {
+    width: 25%;
+  }
+  .contact__map {
+    margin-top: 30px;
+
+    &__container:after {
+      top: -67px;
+    }
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  #map, .contact__map__container {
+    width: 31vw;
+    height: calc(31vw * .77);
+    &:after {
+      right: 13%;
+    }
+  }
+  .horizontal__nav {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  #map, .contact__map__container {
+    width: 32vw;
+    height: calc(32vw * .77);
+  }
+  .contact__map__container:after {
+    top: -18%;
+  }
+  .contact__container {
+    max-width: 1200px;
+    padding: 0 50px;
+    margin: 0 80px 0 160px;
+  }
+  .contact__info .section__number {
+    margin-bottom: 100px;
+    @include toEm(160, $base-size);
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .contact__container {
+    max-width: 980px;
+    padding: 0 60px 0 110px;
+    margin: 0 auto;
+  }
+  .contact__info .section__number {
+    margin-bottom: 50px;
+    @include toEm(140, $base-size);
+  }
+  .intro__title__content {
+    width: 72.7%;
+    margin-left: 15%;
+  }
+  .intro__title {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contact {
+    padding: 60px 0 0
+  }
+  .contact__container {
+    padding: 0 40px 0 90px;
+  }
+  .horizontal__nav {
+    left: 40px;
+  }
+  .contact__info .section__number {
+    margin-bottom: 50px;
+    @include toEm(100, $base-size);
+  }
+  .footer__nav__aim__single {
+    right: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact__container {
+    padding: 0 40px 0 70px;
+    flex-wrap: wrap;
+  }
+  .contact__map {
+  }
+  #map, .contact__map__container {
+    width: 42vw;
+    height: calc(42vw * .77);
+  }
+  .contact__map__mask {
+    top: 80px;
+    left: 52px;
+  }
+  .contact {
+    padding: 0;
+  }
+  .contact__info .section__number {
+    @include toEm(70, $base-size);
+    margin-bottom: -85px;
+  }
+  .horizontal__nav {
+    left: 30px;
+  }
+  .contact__container .contact__form {
+    width: 75%;
+  }
+  .contact__form form textarea {
+    margin-bottom: 25px;
+  }
+  .footer {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact {
+    &__info {
+      width: 100%;
+      order: 1;
+    }
+
+    &__form {
+      order: 2;
+    }
+
+    &__map {
+      order: 3;
+    }
+  }
+  .contact__info .section__number {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+  .contact__container {
+    padding: 0 30px;
+  }
+  .contact {
+    padding-top: 100px;
+    padding-bottom: 0;
+  }
+  .section__number, .footer, .contact__form {
+    display: none;
+  }
+  .contact__map {
+    width: 100%;
+
+    &__container {
+      width: 100vw;
+      height: 400px;
+      max-width: unset;
+      margin-left: -30px;
+
+      &:after {
+        content: none;
+      }
+    }
+
+    &__mask {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+  #map {
+    position: absolute;
+    top: 0;
+    left: -50vw;
+    right: -50vw;
+    width: 200vw;
+    height: 150vw;
+    max-width: unset;
+    max-height: unset;
+    clip-path: none;
+    border-radius: 50%;
+  }
+}
+
